@@ -5,7 +5,7 @@ import { useCarsContext } from "../hooks/useCarsContext"
 //components
 import CarDetails from '../components/carDetails'
 import CarForm from "../components/carForm"
-
+import CarsOlderThan5 from "../components/searchOldCars"
 
 const Home = () => {
     const {cars, dispatch} = useCarsContext()
@@ -28,9 +28,10 @@ const Home = () => {
                 {cars && cars.map((car)=> (
                     <CarDetails key={car._id} car={car}/> //car={car} passes the object to home through props
                 ))}
-            </div>
             
+            </div>
             <CarForm/>
+            <CarsOlderThan5/>
             
         </div>
     )
